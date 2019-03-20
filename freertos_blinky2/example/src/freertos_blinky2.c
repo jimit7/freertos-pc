@@ -46,104 +46,56 @@
  ****************************************************************************/
 
 /* Sets up system hardware */
+static void delay(int x)
+{
+	int i,j;
+	for(i=0;i<1000;i++)
+	{
+		for(j=0;j<x;j++){}
+	}
+}
+
 static void prvSetupHardware(void)
 {
 	SystemCoreClockUpdate();
 	Board_Init();
-
-	/* Initial LED0 state is off */
-	//Board_LED_Set(0, false);
 }
 
 /* LED1 toggle thread */
 static void vLEDTask1(void *pvParameters) {
 
 
-	while (1) { int i,j;
+	while (1) {
 		Board_LED_Set(0, false);
-
-
-		//vTaskDelay(configTICK_RATE_HZ );
-
-for(i=0;i<1000;i++){
-	for(j=0;j<2000;j++){
-}
-}
-
-Board_LED_Set(0, true);
-
-	for(i=0;i<1000;i++){
-		for(j=0;j<2000;j++){
-	}
-	}
-	for(i=0;i<1000;i++){
-			for(j=0;j<2000;j++){
-		}
-		}
+        delay(2000);
+        Board_LED_Set(0, true);
+        delay(2000);
+        delay(2000);
 }}
 static void vLEDTask2(void *pvParameters) {
 
 
 	while (1) {
-
-
-
-
-		//vTaskDelay(configTICK_RATE_HZ);
-		int i,j;
-		for(i=0;i<1000;i++){
-			for(j=0;j<2000;j++){
-		}
-		}
+        delay(2000);
 		Board_LED_Set(1, false);
-		for(i=0;i<1000;i++){
-					for(j=0;j<2000;j++){
-				}
-				}
+		delay(2000);
 		Board_LED_Set(1, true);
-		for(i=0;i<1000;i++){
-				for(j=0;j<2000;j++){
-			}
-			}
-	}
+		delay(2000);
+		}
 }
 static void vLEDTask3(void *pvParameters) {
 
 
 	while (1) {
-int i,j;
-for(i=0;i<1000;i++){
-			for(j=0;j<2000;j++){
-		}
-		}
-for(i=0;i<1000;i++){
-			for(j=0;j<2000;j++){
-		}
-		}
+		delay(2000);
+		delay(2000);
 		Board_LED_Set(2, false);
-
-
-		//vTaskDelay(configTICK_RATE_HZ);
-
-		for(i=0;i<1000;i++){
-			for(j=0;j<2000;j++){
-		}
-		}
+        delay(2000);
 		Board_LED_Set(2, true);
 	}
 }
 
-//static void vUARTTask(void *pvParameters) {
-//	int tickCnt = 0;
 
-//	while (1) {
-//		DEBUGOUT("Tick: %d\r\n", tickCnt);
-//		tickCnt++;
-
-//		/* About a 1s delay here */
-//		vTaskDelay(configTICK_RATE_HZ);
-//	}
-//}
 
 /*****************************************************************************
  * Public functions
