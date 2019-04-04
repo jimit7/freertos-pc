@@ -2104,7 +2104,7 @@ END GROUP
                 0x0000000020084000                __top_RamAHB32 = 0x20084000
                 0x0000000020084000                __top_RAM2 = 0x20084000
 
-.text           0x0000000000000000     0x23bc
+.text           0x0000000000000000     0x23b0
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -2113,10 +2113,10 @@ END GROUP
                 0x00000000000000cc                . = ALIGN (0x4)
                 0x00000000000000cc                __section_table_start = .
                 0x00000000000000cc                __data_section_table = .
-                0x00000000000000cc        0x4 LONG 0x23bc LOADADDR (.data)
+                0x00000000000000cc        0x4 LONG 0x23b0 LOADADDR (.data)
                 0x00000000000000d0        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000d4        0x4 LONG 0x8 SIZEOF (.data)
-                0x00000000000000d8        0x4 LONG 0x23bc LOADADDR (.data_RAM2)
+                0x00000000000000d8        0x4 LONG 0x23b0 LOADADDR (.data_RAM2)
                 0x00000000000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x00000000000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x00000000000000e4                __data_section_table_end = .
@@ -2282,297 +2282,297 @@ END GROUP
  .text.prvSetupHardware
                 0x0000000000000f1c       0x10 ./example/src/freertos_blinky2.o
  .text.vLEDTask1
-                0x0000000000000f2c       0x3e ./example/src/freertos_blinky2.o
+                0x0000000000000f2c       0x32 ./example/src/freertos_blinky2.o
  .text.vLEDTask2
-                0x0000000000000f6a       0x32 ./example/src/freertos_blinky2.o
+                0x0000000000000f5e       0x32 ./example/src/freertos_blinky2.o
  .text.vLEDTask3
-                0x0000000000000f9c       0x32 ./example/src/freertos_blinky2.o
- *fill*         0x0000000000000fce        0x2 ff
- .text.main     0x0000000000000fd0       0x7c ./example/src/freertos_blinky2.o
-                0x0000000000000fd0                main
+                0x0000000000000f90       0x32 ./example/src/freertos_blinky2.o
+ *fill*         0x0000000000000fc2        0x2 ff
+ .text.main     0x0000000000000fc4       0x7c ./example/src/freertos_blinky2.o
+                0x0000000000000fc4                main
  .text.SystemInit
-                0x000000000000104c       0x24 ./example/src/sysinit2.o
-                0x000000000000104c                SystemInit
+                0x0000000000001040       0x24 ./example/src/sysinit2.o
+                0x0000000000001040                SystemInit
  .text.Chip_IOCON_Init
-                0x0000000000001070       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001064       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_Init
-                0x0000000000001086       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x000000000000107a       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_SetPinState
-                0x000000000000109c       0x64 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001090       0x64 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_WritePortBit
-                0x0000000000001100       0x2c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x00000000000010f4       0x2c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_SetPinDIROutput
-                0x000000000000112c       0x36 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001120       0x36 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_SetPinDIRInput
-                0x0000000000001162       0x3a /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001156       0x3a /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_SetPinDIR
-                0x000000000000119c       0x42 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001190       0x42 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_GPIO_WriteDirBit
-                0x00000000000011de       0x2e /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x00000000000011d2       0x2e /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_UART_SendByte
-                0x000000000000120c       0x1c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001200       0x1c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_UART_ConfigData
-                0x0000000000001228       0x1a /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x000000000000121c       0x1a /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Chip_UART_ReadLineStatus
-                0x0000000000001242       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001236       0x16 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.__sys_write
-                0x0000000000001258       0x38 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x0000000000001258                __sys_write
+                0x000000000000124c       0x38 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x000000000000124c                __sys_write
  .text.Board_LED_Init
-                0x0000000000001290       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001284       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
  .text.Board_UART_Init
-                0x00000000000012c0       0x12 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x00000000000012c0                Board_UART_Init
- *fill*         0x00000000000012d2        0x2 ff
+                0x00000000000012b4       0x12 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x00000000000012b4                Board_UART_Init
+ *fill*         0x00000000000012c6        0x2 ff
  .text.Board_Debug_Init
-                0x00000000000012d4       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x00000000000012d4                Board_Debug_Init
+                0x00000000000012c8       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x00000000000012c8                Board_Debug_Init
  .text.Board_UARTPutChar
-                0x0000000000001304       0x34 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x0000000000001304                Board_UARTPutChar
+                0x00000000000012f8       0x34 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x00000000000012f8                Board_UARTPutChar
  .text.Board_LED_Set
-                0x0000000000001338       0x54 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x0000000000001338                Board_LED_Set
+                0x000000000000132c       0x54 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x000000000000132c                Board_LED_Set
  .text.Board_Init
-                0x000000000000138c       0x24 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x000000000000138c                Board_Init
+                0x0000000000001380       0x24 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000001380                Board_Init
  .text.Chip_SYSCTL_SetFLASHAccess
-                0x00000000000013b0       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+                0x00000000000013a4       0x30 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
  .text.Board_SetupMuxing
-                0x00000000000013e0       0x1c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
-                0x00000000000013e0                Board_SetupMuxing
+                0x00000000000013d4       0x1c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+                0x00000000000013d4                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x00000000000013fc       0x12 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
-                0x00000000000013fc                Board_SetupClocking
+                0x00000000000013f0       0x12 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+                0x00000000000013f0                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000000000140e       0x10 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
-                0x000000000000140e                Board_SystemInit
- *fill*         0x000000000000141e        0x2 ff
+                0x0000000000001402       0x10 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+                0x0000000000001402                Board_SystemInit
+ *fill*         0x0000000000001412        0x2 ff
  .text.SystemCoreClockUpdate
-                0x0000000000001420       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x0000000000001420                SystemCoreClockUpdate
+                0x0000000000001414       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x0000000000001414                SystemCoreClockUpdate
  .text.Chip_Clock_IsMainPLLEnabled
-                0x0000000000001438       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000000000000142c       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x000000000000145c       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001450       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_FeedPLL
-                0x0000000000001480       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001474       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLSource
-                0x00000000000014b4       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000014a8       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainOscRate
-                0x00000000000014d4       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000014c8       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetIntOscRate
-                0x00000000000014e8       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000014dc       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetRTCOscRate
-                0x00000000000014fc       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000014f0       0x14 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLInClockRate
-                0x0000000000001510        0xe /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- *fill*         0x000000000000151e        0x2 ff
+                0x0000000000001504        0xe /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ *fill*         0x0000000000001512        0x2 ff
  .text.Chip_Clock_EnablePLL
-                0x0000000000001520       0x44 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001520                Chip_Clock_EnablePLL
+                0x0000000000001514       0x44 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001514                Chip_Clock_EnablePLL
  .text.Chip_Clock_DisablePLL
-                0x0000000000001564       0x48 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001564                Chip_Clock_DisablePLL
+                0x0000000000001558       0x48 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001558                Chip_Clock_DisablePLL
  .text.Chip_Clock_SetupPLL
-                0x00000000000015ac       0x5c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000000000015ac                Chip_Clock_SetupPLL
+                0x00000000000015a0       0x5c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000015a0                Chip_Clock_SetupPLL
  .text.Chip_Clock_EnablePeriphClock
-                0x0000000000001608       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001608                Chip_Clock_EnablePeriphClock
+                0x00000000000015fc       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000015fc                Chip_Clock_EnablePeriphClock
  .text.Chip_Clock_GetCPUClockSource
-                0x000000000000163c       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000000000000163c                Chip_Clock_GetCPUClockSource
+                0x0000000000001630       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001630                Chip_Clock_GetCPUClockSource
  .text.Chip_Clock_SetCPUClockDiv
-                0x0000000000001660       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001660                Chip_Clock_SetCPUClockDiv
+                0x0000000000001654       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001654                Chip_Clock_SetCPUClockDiv
  .text.Chip_Clock_GetCPUClockDiv
-                0x0000000000001680       0x1c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001680                Chip_Clock_GetCPUClockDiv
+                0x0000000000001674       0x1c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001674                Chip_Clock_GetCPUClockDiv
  .text.Chip_Clock_GetPCLKDiv
-                0x000000000000169c       0x8c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000000000000169c                Chip_Clock_GetPCLKDiv
+                0x0000000000001690       0x8c /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001690                Chip_Clock_GetPCLKDiv
  .text.Chip_Clock_GetSYSCLKRate
-                0x0000000000001728       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000000000001728                Chip_Clock_GetSYSCLKRate
+                0x000000000000171c       0x34 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000000000000171c                Chip_Clock_GetSYSCLKRate
  .text.Chip_Clock_GetMainPLLOutClockRate
-                0x000000000000175c       0x54 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000000000000175c                Chip_Clock_GetMainPLLOutClockRate
+                0x0000000000001750       0x54 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000000000001750                Chip_Clock_GetMainPLLOutClockRate
  .text.Chip_Clock_GetMainClockRate
-                0x00000000000017b0       0x28 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000000000017b0                Chip_Clock_GetMainClockRate
+                0x00000000000017a4       0x28 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000017a4                Chip_Clock_GetMainClockRate
  .text.Chip_Clock_GetSystemClockRate
-                0x00000000000017d8       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000000000017d8                Chip_Clock_GetSystemClockRate
+                0x00000000000017cc       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000017cc                Chip_Clock_GetSystemClockRate
  .text.Chip_Clock_GetPeripheralClockRate
-                0x00000000000017f0       0x26 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000000000017f0                Chip_Clock_GetPeripheralClockRate
+                0x00000000000017e4       0x26 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000000000017e4                Chip_Clock_GetPeripheralClockRate
  .text.Chip_IOCON_PinMuxSet
-                0x0000000000001816       0x36 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x0000000000001816                Chip_IOCON_PinMuxSet
+                0x000000000000180a       0x36 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x000000000000180a                Chip_IOCON_PinMuxSet
  .text.Chip_IOCON_PinMux
-                0x000000000000184c       0x94 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x000000000000184c                Chip_IOCON_PinMux
+                0x0000000000001840       0x94 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x0000000000001840                Chip_IOCON_PinMux
  .text.Chip_IOCON_SetPinMuxing
-                0x00000000000018e0       0x62 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x00000000000018e0                Chip_IOCON_SetPinMuxing
- *fill*         0x0000000000001942        0x2 ff
+                0x00000000000018d4       0x62 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00000000000018d4                Chip_IOCON_SetPinMuxing
+ *fill*         0x0000000000001936        0x2 ff
  .text.Chip_Clock_IsMainPLLEnabled
-                0x0000000000001944       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x0000000000001938       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLLocked
-                0x0000000000001968       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x000000000000195c       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x000000000000198c       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x0000000000001980       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x00000000000019b0       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000000000019a4       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsCrystalEnabled
-                0x00000000000019d0       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000000000019c4       0x24 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_SetMainPLLSource
-                0x00000000000019f4       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000000000019e8       0x20 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_SetupXtalClocking
-                0x0000000000001a14       0x90 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
-                0x0000000000001a14                Chip_SetupXtalClocking
+                0x0000000000001a08       0x90 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x0000000000001a08                Chip_SetupXtalClocking
  .text.Chip_UART_SetupFIFOS
-                0x0000000000001aa4       0x1a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001a98       0x1a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_ConfigData
-                0x0000000000001abe       0x1a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001ab2       0x1a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_EnableDivisorAccess
-                0x0000000000001ad8       0x1e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001acc       0x1e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_DisableDivisorAccess
-                0x0000000000001af6       0x1e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001aea       0x1e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_SetDivisorLatches
-                0x0000000000001b14       0x26 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
- *fill*         0x0000000000001b3a        0x2 ff
+                0x0000000000001b08       0x26 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ *fill*         0x0000000000001b2e        0x2 ff
  .text.Chip_UART_GetClockIndex
-                0x0000000000001b3c       0x50 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001b30       0x50 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_GetClkIndex
-                0x0000000000001b8c       0x50 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001b80       0x50 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .text.Chip_UART_Init
-                0x0000000000001bdc       0x78 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
-                0x0000000000001bdc                Chip_UART_Init
+                0x0000000000001bd0       0x78 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001bd0                Chip_UART_Init
  .text.Chip_UART_TXEnable
-                0x0000000000001c54       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
-                0x0000000000001c54                Chip_UART_TXEnable
+                0x0000000000001c48       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001c48                Chip_UART_TXEnable
  .text.Chip_UART_TXDisable
-                0x0000000000001c6c       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
-                0x0000000000001c6c                Chip_UART_TXDisable
+                0x0000000000001c60       0x18 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001c60                Chip_UART_TXDisable
  .text.Chip_UART_SetBaud
-                0x0000000000001c84       0x62 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
-                0x0000000000001c84                Chip_UART_SetBaud
- .text.__main   0x0000000000001ce6        0xe /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(_cr__main.o)
-                0x0000000000001ce6                __main
- .text.memset   0x0000000000001cf4        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(memset.o)
-                0x0000000000001cf4                memset
- .text.malloc   0x0000000000001cf8       0xc8 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(alloc.o)
-                0x0000000000001cf8                malloc
- .text.free     0x0000000000001dc0       0x30 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(alloc.o)
-                0x0000000000001dc0                free
- .text._initio  0x0000000000001df0       0x78 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(initio.o)
-                0x0000000000001df0                _initio
- .text.setvbuf  0x0000000000001e68       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(setvbuf.o)
-                0x0000000000001e68                setvbuf
- .text.strlen   0x0000000000001ea8       0x4a /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(strlen.o)
-                0x0000000000001ea8                strlen
- *fill*         0x0000000000001ef2        0x2 ff
- .text._sbrk    0x0000000000001ef4       0x3c /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_cr_sbrk.o)
-                0x0000000000001ef4                _sbrk
+                0x0000000000001c78       0x62 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+                0x0000000000001c78                Chip_UART_SetBaud
+ .text.__main   0x0000000000001cda        0xe /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(_cr__main.o)
+                0x0000000000001cda                __main
+ .text.memset   0x0000000000001ce8        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(memset.o)
+                0x0000000000001ce8                memset
+ .text.malloc   0x0000000000001cec       0xc8 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(alloc.o)
+                0x0000000000001cec                malloc
+ .text.free     0x0000000000001db4       0x30 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(alloc.o)
+                0x0000000000001db4                free
+ .text._initio  0x0000000000001de4       0x78 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(initio.o)
+                0x0000000000001de4                _initio
+ .text.setvbuf  0x0000000000001e5c       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(setvbuf.o)
+                0x0000000000001e5c                setvbuf
+ .text.strlen   0x0000000000001e9c       0x4a /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(strlen.o)
+                0x0000000000001e9c                strlen
+ *fill*         0x0000000000001ee6        0x2 ff
+ .text._sbrk    0x0000000000001ee8       0x3c /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_cr_sbrk.o)
+                0x0000000000001ee8                _sbrk
  .text._deferredlazyseek
-                0x0000000000001f30       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_deferredlazyseek.o)
-                0x0000000000001f30                _deferredlazyseek
- .text._fdopen  0x0000000000001f70       0x68 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_fdopen.o)
-                0x0000000000001f70                _fdopen
- .text._fflush  0x0000000000001fd8       0x52 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_fflush.o)
-                0x0000000000001fd8                _fflush
- *fill*         0x000000000000202a        0x2 ff
+                0x0000000000001f24       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_deferredlazyseek.o)
+                0x0000000000001f24                _deferredlazyseek
+ .text._fdopen  0x0000000000001f64       0x68 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_fdopen.o)
+                0x0000000000001f64                _fdopen
+ .text._fflush  0x0000000000001fcc       0x52 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_fflush.o)
+                0x0000000000001fcc                _fflush
+ *fill*         0x000000000000201e        0x2 ff
  .text._Cwritebuf
-                0x000000000000202c       0x6c /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_writebuf.o)
-                0x000000000000202c                _Cwritebuf
- .text.fclose   0x0000000000002098       0x58 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fclose.o)
-                0x0000000000002098                fclose
- .text.fflush   0x00000000000020f0       0x44 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fflush.o)
-                0x00000000000020f0                fflush
- .text.fseek    0x0000000000002134      0x100 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fseek.o)
-                0x0000000000002134                fseek
- .text.ftell    0x0000000000002234       0x44 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(ftell.o)
-                0x0000000000002234                ftell
- .text.remove   0x0000000000002278       0x14 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(remove.o)
-                0x0000000000002278                remove
+                0x0000000000002020       0x6c /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_writebuf.o)
+                0x0000000000002020                _Cwritebuf
+ .text.fclose   0x000000000000208c       0x58 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fclose.o)
+                0x000000000000208c                fclose
+ .text.fflush   0x00000000000020e4       0x44 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fflush.o)
+                0x00000000000020e4                fflush
+ .text.fseek    0x0000000000002128      0x100 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(fseek.o)
+                0x0000000000002128                fseek
+ .text.ftell    0x0000000000002228       0x44 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(ftell.o)
+                0x0000000000002228                ftell
+ .text.remove   0x000000000000226c       0x14 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(remove.o)
+                0x000000000000226c                remove
  .text.__check_heap_overflow
-                0x000000000000228c       0x18 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_cr_check_heap.o)
-                0x000000000000228c                __check_heap_overflow
+                0x0000000000002280       0x18 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_cr_check_heap.o)
+                0x0000000000002280                __check_heap_overflow
  .text._do_fflush
-                0x00000000000022a4       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_do_fflush.o)
-                0x00000000000022a4                _do_fflush
+                0x0000000000002298       0x40 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(_do_fflush.o)
+                0x0000000000002298                _do_fflush
  .text.__aeabi_memset_lowlevel
-                0x00000000000022e4       0x32 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/libcr_eabihelpers.a(memcpy.o)
-                0x00000000000022e4                __aeabi_lowlevel_memset
+                0x00000000000022d8       0x32 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/libcr_eabihelpers.a(memcpy.o)
+                0x00000000000022d8                __aeabi_lowlevel_memset
  .text.__sys_close
-                0x0000000000002316        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_close.o)
-                0x0000000000002316                __sys_close
+                0x000000000000230a        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_close.o)
+                0x000000000000230a                __sys_close
  .text.__sys_flen
-                0x000000000000231c        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_flen.o)
-                0x000000000000231c                __sys_flen
+                0x0000000000002310        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_flen.o)
+                0x0000000000002310                __sys_flen
  .text.__sys_istty
-                0x0000000000002322        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_istty.o)
-                0x0000000000002322                __sys_istty
+                0x0000000000002316        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_istty.o)
+                0x0000000000002316                __sys_istty
  .text.__sys_remove
-                0x0000000000002328        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_remove.o)
-                0x0000000000002328                __sys_remove
+                0x000000000000231c        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_remove.o)
+                0x000000000000231c                __sys_remove
  .text.__sys_seek
-                0x000000000000232e        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_seek.o)
-                0x000000000000232e                __sys_seek
+                0x0000000000002322        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_seek.o)
+                0x0000000000002322                __sys_seek
  .text.__sys_tmpnam
-                0x0000000000002334        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_tmpnam.o)
-                0x0000000000002334                __sys_tmpnam
+                0x0000000000002328        0x6 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__sys_tmpnam.o)
+                0x0000000000002328                __sys_tmpnam
  *(.rodata .rodata.* .constdata .constdata.*)
- *fill*         0x000000000000233a        0x2 ff
- .rodata        0x000000000000233c        0x5 ./freertos/src/tasks.o
- *fill*         0x0000000000002341        0x3 ff
- .rodata        0x0000000000002344        0xa ./example/src/freertos_blinky2.o
- *fill*         0x000000000000234e        0x2 ff
+ *fill*         0x000000000000232e        0x2 ff
+ .rodata        0x0000000000002330        0x5 ./freertos/src/tasks.o
+ *fill*         0x0000000000002335        0x3 ff
+ .rodata        0x0000000000002338        0xa ./example/src/freertos_blinky2.o
+ *fill*         0x0000000000002342        0x2 ff
  .rodata.OscRateIn
-                0x0000000000002350        0x4 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x0000000000002350                OscRateIn
+                0x0000000000002344        0x4 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000002344                OscRateIn
  .rodata.RTCOscRateIn
-                0x0000000000002354        0x4 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
-                0x0000000000002354                RTCOscRateIn
+                0x0000000000002348        0x4 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+                0x0000000000002348                RTCOscRateIn
  .rodata.pinmuxing
-                0x0000000000002358       0x5c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+                0x000000000000234c       0x5c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
  .rodata._initio.str1.1
-                0x00000000000023b4        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(initio.o)
+                0x00000000000023a8        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_c.a(initio.o)
  .rodata.__num_Ciob_streams
-                0x00000000000023b8        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__ciob.o)
-                0x00000000000023b8                __num_Ciob_streams
-                0x00000000000023bc                . = ALIGN (0x4)
+                0x00000000000023ac        0x4 /usr/local/mcuxpressoide-10.3.1_2233/ide/plugins/com.nxp.mcuxpresso.tools.linux_10.3.0.201811011841/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libcr_nohost.a(__ciob.o)
+                0x00000000000023ac                __num_Ciob_streams
+                0x00000000000023b0                . = ALIGN (0x4)
 
-.glue_7         0x00000000000023bc        0x0
- .glue_7        0x00000000000023bc        0x0 linker stubs
+.glue_7         0x00000000000023b0        0x0
+ .glue_7        0x00000000000023b0        0x0 linker stubs
 
-.glue_7t        0x00000000000023bc        0x0
- .glue_7t       0x00000000000023bc        0x0 linker stubs
+.glue_7t        0x00000000000023b0        0x0
+ .glue_7t       0x00000000000023b0        0x0 linker stubs
 
-.vfp11_veneer   0x00000000000023bc        0x0
- .vfp11_veneer  0x00000000000023bc        0x0 linker stubs
+.vfp11_veneer   0x00000000000023b0        0x0
+ .vfp11_veneer  0x00000000000023b0        0x0 linker stubs
 
-.v4_bx          0x00000000000023bc        0x0
- .v4_bx         0x00000000000023bc        0x0 linker stubs
+.v4_bx          0x00000000000023b0        0x0
+ .v4_bx         0x00000000000023b0        0x0 linker stubs
 
-.iplt           0x00000000000023bc        0x0
- .iplt          0x00000000000023bc        0x0 ./freertos/src/FreeRTOSCommonHooks.o
+.iplt           0x00000000000023b0        0x0
+ .iplt          0x00000000000023b0        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
-.rel.dyn        0x00000000000023bc        0x0
- .rel.iplt      0x00000000000023bc        0x0 ./freertos/src/FreeRTOSCommonHooks.o
+.rel.dyn        0x00000000000023b0        0x0
+ .rel.iplt      0x00000000000023b0        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000000023bc                __exidx_start = .
+                0x00000000000023b0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000000000023bc                __exidx_end = .
-                0x00000000000023bc                _etext = .
+                0x00000000000023b0                __exidx_end = .
+                0x00000000000023b0                _etext = .
 
-.data_RAM2      0x000000002007c000        0x0 load address 0x00000000000023bc
+.data_RAM2      0x000000002007c000        0x0 load address 0x00000000000023b0
  FILL mask 0xff
                 [!provide]                        PROVIDE (__start_data_RAM2 = .)
  *(.ramfunc.$RAM2)
@@ -2588,7 +2588,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000        0x8 load address 0x00000000000023bc
+.data           0x0000000010000000        0x8 load address 0x00000000000023b0
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -2601,7 +2601,7 @@ END GROUP
                 0x0000000010000008                . = ALIGN (0x4)
                 0x0000000010000008                _edata = .
 
-.igot.plt       0x0000000010000008        0x0 load address 0x00000000000023c4
+.igot.plt       0x0000000010000008        0x0 load address 0x00000000000023b8
  .igot.plt      0x0000000010000008        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
 .bss_RAM2       0x000000002007c000        0x0
@@ -2689,43 +2689,43 @@ END GROUP
                 0x0000000010008000                PROVIDE (_vStackTop = DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 [!provide]                        PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x00000000000023c4                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x00000000000023c4                _image_size = (_image_end - _image_start)
+                0x00000000000023b8                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x00000000000023b8                _image_size = (_image_end - _image_start)
 OUTPUT(freertos_blinky2.axf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x6c3a
+.debug_info     0x0000000000000000     0x6c24
  .debug_info    0x0000000000000000      0x2d0 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_info    0x00000000000002d0      0x261 ./freertos/src/heap_3.o
  .debug_info    0x0000000000000531      0x3fc ./freertos/src/list.o
  .debug_info    0x000000000000092d      0x4ff ./freertos/src/port.o
  .debug_info    0x0000000000000e2c     0x132c ./freertos/src/tasks.o
  .debug_info    0x0000000000002158      0x251 ./example/src/cr_startup_lpc175x_6x.o
- .debug_info    0x00000000000023a9      0x2ea ./example/src/freertos_blinky2.o
- .debug_info    0x0000000000002693      0x232 ./example/src/sysinit2.o
- .debug_info    0x00000000000028c5     0x1511 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
- .debug_info    0x0000000000003dd6      0x6c3 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
- .debug_info    0x0000000000004499      0x558 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_info    0x00000000000049f1      0xba2 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_info    0x0000000000005593      0x31e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_info    0x00000000000058b1      0x474 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_info    0x0000000000005d25      0xf15 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ .debug_info    0x00000000000023a9      0x2d4 ./example/src/freertos_blinky2.o
+ .debug_info    0x000000000000267d      0x232 ./example/src/sysinit2.o
+ .debug_info    0x00000000000028af     0x1511 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+ .debug_info    0x0000000000003dc0      0x6c3 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+ .debug_info    0x0000000000004483      0x558 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_info    0x00000000000049db      0xba2 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_info    0x000000000000557d      0x31e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_info    0x000000000000589b      0x474 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_info    0x0000000000005d0f      0xf15 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
 
-.debug_abbrev   0x0000000000000000     0x1ab8
+.debug_abbrev   0x0000000000000000     0x1aaf
  .debug_abbrev  0x0000000000000000      0x165 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_abbrev  0x0000000000000165      0x117 ./freertos/src/heap_3.o
  .debug_abbrev  0x000000000000027c      0x122 ./freertos/src/list.o
  .debug_abbrev  0x000000000000039e      0x21b ./freertos/src/port.o
  .debug_abbrev  0x00000000000005b9      0x254 ./freertos/src/tasks.o
  .debug_abbrev  0x000000000000080d      0x103 ./example/src/cr_startup_lpc175x_6x.o
- .debug_abbrev  0x0000000000000910      0x14a ./example/src/freertos_blinky2.o
- .debug_abbrev  0x0000000000000a5a       0xdd ./example/src/sysinit2.o
- .debug_abbrev  0x0000000000000b37      0x3bd /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
- .debug_abbrev  0x0000000000000ef4      0x180 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
- .debug_abbrev  0x0000000000001074      0x151 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_abbrev  0x00000000000011c5      0x309 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_abbrev  0x00000000000014ce      0x14a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_abbrev  0x0000000000001618      0x18e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_abbrev  0x00000000000017a6      0x312 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ .debug_abbrev  0x0000000000000910      0x141 ./example/src/freertos_blinky2.o
+ .debug_abbrev  0x0000000000000a51       0xdd ./example/src/sysinit2.o
+ .debug_abbrev  0x0000000000000b2e      0x3bd /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+ .debug_abbrev  0x0000000000000eeb      0x180 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+ .debug_abbrev  0x000000000000106b      0x151 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_abbrev  0x00000000000011bc      0x309 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_abbrev  0x00000000000014c5      0x14a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_abbrev  0x000000000000160f      0x18e /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_abbrev  0x000000000000179d      0x312 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
 
 .debug_aranges  0x0000000000000000      0x838
  .debug_aranges
@@ -2849,22 +2849,22 @@ OUTPUT(freertos_blinky2.axf elf32-littlearm)
  .debug_macro   0x0000000000005edd      0x1cd /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .debug_macro   0x00000000000060aa      0x1cd /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
 
-.debug_line     0x0000000000000000     0x5ddf
+.debug_line     0x0000000000000000     0x5dd8
  .debug_line    0x0000000000000000      0x641 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_line    0x0000000000000641      0x5e6 ./freertos/src/heap_3.o
  .debug_line    0x0000000000000c27      0x632 ./freertos/src/list.o
  .debug_line    0x0000000000001259      0x718 ./freertos/src/port.o
  .debug_line    0x0000000000001971      0xce6 ./freertos/src/tasks.o
  .debug_line    0x0000000000002657       0xdb ./example/src/cr_startup_lpc175x_6x.o
- .debug_line    0x0000000000002732      0x69b ./example/src/freertos_blinky2.o
- .debug_line    0x0000000000002dcd      0x4da ./example/src/sysinit2.o
- .debug_line    0x00000000000032a7      0x89c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
- .debug_line    0x0000000000003b43      0x511 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
- .debug_line    0x0000000000004054      0x4b4 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_line    0x0000000000004508      0x730 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_line    0x0000000000004c38      0x4a0 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_line    0x00000000000050d8      0x52a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_line    0x0000000000005602      0x7dd /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ .debug_line    0x0000000000002732      0x694 ./example/src/freertos_blinky2.o
+ .debug_line    0x0000000000002dc6      0x4da ./example/src/sysinit2.o
+ .debug_line    0x00000000000032a0      0x89c /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board.o)
+ .debug_line    0x0000000000003b3c      0x511 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/Debug/liblpc_board_nxp_lpcxpresso_1769.a(board_sysinit.o)
+ .debug_line    0x000000000000404d      0x4b4 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_line    0x0000000000004501      0x730 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_line    0x0000000000004c31      0x4a0 /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_line    0x00000000000050d1      0x52a /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_line    0x00000000000055fb      0x7dd /home/jpatel/freertos-pc/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
 
 .debug_str      0x0000000000000000    0x173a3
  .debug_str     0x0000000000000000    0x1335a ./freertos/src/FreeRTOSCommonHooks.o

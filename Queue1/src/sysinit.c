@@ -1,8 +1,8 @@
 /*
- * @brief FreeRTOS Blinky example
+ * @brief Common SystemInit function for LPC17xx/40xx chips
  *
  * @note
- * Copyright(C) NXP Semiconductors, 2014
+ * Copyright(C) NXP Semiconductors, 2013-14
  * All rights reserved.
  *
  * @par
@@ -29,9 +29,11 @@
  * this code.
  */
 
-#include "board.h"
-#include "FreeRTOS.h"
-#include "task.h"
+ #if defined(NO_BOARD_LIB)
+ #include "chip.h"
+ #else
+ #include "board.h"
+ #endif
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -41,95 +43,47 @@
  * Public types/enumerations/variables
  ****************************************************************************/
 
+#if defined(NO_BOARD_LIB)
+const uint32_t OscRateIn = 12000000;
+const uint32_t RTCOscRateIn = 32768;
+#endif
+
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
-
-/* Sets up system hardware */
-static void delay(int x)
-{
-	int i,j;
-	for(i=0;i<1000;i++)
-	{
-		for(j=0;j<x;j++){}
-	}
-}
-
-static void prvSetupHardware(void)
-{
-	SystemCoreClockUpdate();
-	Board_Init();
-}
-
-/* LED1 toggle thread */
-static void vLEDTask1(void *pvParameters) {
-
-
-	while (1) {
-		int x = 0;
-		Board_LED_Set(x, false);
-        delay(2000);
-        Board_LED_Set(x, true);
-        delay(2000);
-        delay(2000);
-}}
-static void vLEDTask2(void *pvParameters) {
-
-
-	while (1) {
-        delay(2000);
-		Board_LED_Set(1, false);
-		delay(2000);
-		Board_LED_Set(1, true);
-		delay(2000);
-		}
-}
-static void vLEDTask3(void *pvParameters) {
-
-
-	while (1) {
-		delay(2000);
-		delay(2000);
-		Board_LED_Set(2, false);
-        delay(2000);
-		Board_LED_Set(2, true);
-	}
-}
-
-
 
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
 
-/**
- * @brief	main routine for FreeRTOS blinky example
- * @return	Nothing, function should not exit
- */
-int main(void)
+/* Set up and initialize hardware prior to call to main */
+void SystemInit(void)
 {
+	unsigned int *pSCB_VTOR = (unsigned int *) 0xE000ED08;
 
-	prvSetupHardware();
+#if defined(__IAR_SYSTEMS_ICC__)
+	extern void *__vector_table;
 
-	/* LED1 toggle thread */
-	xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY +1UL),
-				(xTaskHandle *) NULL);
-	xTaskCreate(vLEDTask2, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
+	*pSCB_VTOR = (unsigned int) &__vector_table;
+#elif defined(__CODE_RED)
+	extern void *g_pfnVectors;
 
-	xTaskCreate(vLEDTask3, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
+	*pSCB_VTOR = (unsigned int) &g_pfnVectors;
+#elif defined(__ARMCC_VERSION)
+	extern void *__Vectors;
 
-	/* Start the scheduler */
-	vTaskStartScheduler();
+	*pSCB_VTOR = (unsigned int) &__Vectors;
+#endif
 
-	/* Should never arrive here */
-	return 1;
+#if defined(__FPU_PRESENT) && __FPU_PRESENT == 1
+	fpuInit();
+#endif
+
+#if defined(NO_BOARD_LIB)
+	/* Chip specific SystemInit */
+	Chip_SystemInit();
+#else
+	/* Setup system clocking and muxing */
+	Board_SystemInit();
+#endif
 }
-
-/**
- * @}
- */

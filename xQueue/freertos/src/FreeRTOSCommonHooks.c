@@ -1,8 +1,8 @@
 /*
- * @brief FreeRTOS Blinky example
+ * @brief Common FreeRTOS functions shared among platforms
  *
  * @note
- * Copyright(C) NXP Semiconductors, 2014
+ * Copyright(C) NXP Semiconductors, 2012
  * All rights reserved.
  *
  * @par
@@ -29,9 +29,11 @@
  * this code.
  */
 
-#include "board.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "FreeRTOSCommonHooks.h"
+
+#include "chip.h"
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -45,91 +47,48 @@
  * Private functions
  ****************************************************************************/
 
-/* Sets up system hardware */
-static void delay(int x)
-{
-	int i,j;
-	for(i=0;i<1000;i++)
-	{
-		for(j=0;j<x;j++){}
-	}
-}
-
-static void prvSetupHardware(void)
-{
-	SystemCoreClockUpdate();
-	Board_Init();
-}
-
-/* LED1 toggle thread */
-static void vLEDTask1(void *pvParameters) {
-
-
-	while (1) {
-		int x = 0;
-		Board_LED_Set(x, false);
-        delay(2000);
-        Board_LED_Set(x, true);
-        delay(2000);
-        delay(2000);
-}}
-static void vLEDTask2(void *pvParameters) {
-
-
-	while (1) {
-        delay(2000);
-		Board_LED_Set(1, false);
-		delay(2000);
-		Board_LED_Set(1, true);
-		delay(2000);
-		}
-}
-static void vLEDTask3(void *pvParameters) {
-
-
-	while (1) {
-		delay(2000);
-		delay(2000);
-		Board_LED_Set(2, false);
-        delay(2000);
-		Board_LED_Set(2, true);
-	}
-}
-
-
-
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
 
-/**
- * @brief	main routine for FreeRTOS blinky example
- * @return	Nothing, function should not exit
- */
-int main(void)
+/* Delay for the specified number of milliSeconds */
+void FreeRTOSDelay(uint32_t ms)
 {
+	portTickType xDelayTime;
 
-	prvSetupHardware();
-
-	/* LED1 toggle thread */
-	xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY +1UL),
-				(xTaskHandle *) NULL);
-	xTaskCreate(vLEDTask2, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
-
-	xTaskCreate(vLEDTask3, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
-
-	/* Start the scheduler */
-	vTaskStartScheduler();
-
-	/* Should never arrive here */
-	return 1;
+	xDelayTime = xTaskGetTickCount();
+	vTaskDelayUntil(&xDelayTime, ms);
 }
 
-/**
- * @}
- */
+/* FreeRTOS malloc fail hook */
+void vApplicationMallocFailedHook(void)
+{
+	DEBUGSTR("DIE:ERROR:FreeRTOS: Malloc Failure!\r\n");
+	taskDISABLE_INTERRUPTS();
+	for (;; ) {}
+}
+
+/* FreeRTOS application idle hook */
+void vApplicationIdleHook(void)
+{
+	/* Best to sleep here until next systick */
+	__WFI();
+}
+
+/* FreeRTOS stack overflow hook */
+void vApplicationStackOverflowHook(xTaskHandle pxTask, signed char *pcTaskName)
+{
+	(void) pxTask;
+	(void) pcTaskName;
+
+	DEBUGOUT("DIE:ERROR:FreeRTOS: Stack overflow in task %s\r\n", pcTaskName);
+	/* Run time stack overflow checking is performed if
+	   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
+	   function is called if a stack overflow is detected. */
+	taskDISABLE_INTERRUPTS();
+	for (;; ) {}
+}
+
+/* FreeRTOS application tick hook */
+void vApplicationTickHook(void)
+{}

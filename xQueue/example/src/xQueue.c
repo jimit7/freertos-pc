@@ -32,7 +32,7 @@
 #include "board.h"
 #include "FreeRTOS.h"
 #include "task.h"
-
+#include "queue.h"
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
@@ -60,44 +60,47 @@ static void prvSetupHardware(void)
 	SystemCoreClockUpdate();
 	Board_Init();
 }
+static void vSenderTask( void *pvParameters )
+{
+	uint8_t  lValueToSend;
+    uint32_t xStatus;
+    lValueToSend = (uint8_t ) pvParameters;
+while(1){
 
-/* LED1 toggle thread */
-static void vLEDTask1(void *pvParameters) {
+	xStatus = xQueueSendToBack( xQueue, &lValueToSend, 1000 );
+	if( xStatus != pdPASS )
+	{
 
-
-	while (1) {
-		int x = 0;
-		Board_LED_Set(x, false);
-        delay(2000);
-        Board_LED_Set(x, true);
-        delay(2000);
-        delay(2000);
-}}
-static void vLEDTask2(void *pvParameters) {
-
-
-	while (1) {
-        delay(2000);
-		Board_LED_Set(1, false);
-		delay(2000);
-		Board_LED_Set(1, true);
-		delay(2000);
+		vPrintString( "Could not send to the queue.\r\n" );
+		}
 		}
 }
-static void vLEDTask3(void *pvParameters) {
+static void vReceiverTask( void *pvParameters )
+{
+	uint8_t led;
+	BaseType_t xStatus;
+	const TickType_t xTicksToWait = pdMS_TO_TICKS( 100 );
+	while(1)
+	{
+		if( uxQueueMessagesWaiting( xQueue ) != 0 )
+		{
+		vPrintString( "Queue should have been empty!\r\n" );
+		}
+		xStatus = xQueueReceive( xQueue, &x, xTicksToWait );
+		if( xStatus == pdPASS )
+		{
+		/* Data was successfully received from the queue, print out the received
+		value. */
+			Board_LED_Set(led, false);
+		}
+		else
+		{
 
+		vPrintString( "Could not receive from the queue.\r\n" );
+		}
 
-	while (1) {
-		delay(2000);
-		delay(2000);
-		Board_LED_Set(2, false);
-        delay(2000);
-		Board_LED_Set(2, true);
 	}
 }
-
-
-
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
@@ -110,26 +113,21 @@ int main(void)
 {
 
 	prvSetupHardware();
-
+	xQueueCreate( 15, sizeof(uint8_t) );
 	/* LED1 toggle thread */
-	xTaskCreate(vLEDTask1, (signed char *) "vTaskLed1",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY +1UL),
-				(xTaskHandle *) NULL);
-	xTaskCreate(vLEDTask2, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
-
-	xTaskCreate(vLEDTask3, (signed char *) "vTaskLed1",
-					configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-					(xTaskHandle *) NULL);
-
-	/* Start the scheduler */
+	if( xQueue != NULL )
+	{
+	int *r;
+		r = ((rand % 3) + 1);
+		xTaskCreate( vSenderTask, "Sender1", 128, ( int * ) r, 1, NULL );
+		xTaskCreate( vReceiverTask, "Receiver", 128, NULL, 2, NULL );
+		/* Start the scheduler */
 	vTaskStartScheduler();
 
 	/* Should never arrive here */
 	return 1;
 }
-
+}
 /**
  * @}
  */
