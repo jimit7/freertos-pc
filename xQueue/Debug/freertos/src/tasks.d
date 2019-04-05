@@ -1,7 +1,7 @@
 freertos/src/tasks.o freertos/src/tasks.d: ../freertos/src/tasks.c \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/FreeRTOS.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/projdefs.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/example/inc/FreeRTOSConfig.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h \
+ /home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/chip.h \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/lpc_types.h \
@@ -44,20 +44,20 @@ freertos/src/tasks.o freertos/src/tasks.d: ../freertos/src/tasks.c \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/lpc_types.h \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/lpc_phy.h \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/portable.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/portmacro.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/mpu_wrappers.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/task.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/list.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/timers.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/task.h \
- /home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/StackMacros.h
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/portable.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/portmacro.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/mpu_wrappers.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/task.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/list.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/timers.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/task.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/StackMacros.h
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/FreeRTOS.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/projdefs.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/example/inc/FreeRTOSConfig.h:
+/home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h:
 
 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
@@ -143,18 +143,18 @@ freertos/src/tasks.o freertos/src/tasks.d: ../freertos/src/tasks.c \
 
 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/portable.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/portable.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/portmacro.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/portmacro.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/mpu_wrappers.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/mpu_wrappers.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/task.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/task.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/list.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/list.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/timers.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/timers.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/task.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/task.h:
 
-/home/jpatel/freertos-pc/freertos_blinkyRGB\ VTASKDELAY/freertos/inc/StackMacros.h:
+/home/jpatel/freertos-pc/xQueue/freertos/inc/StackMacros.h:

@@ -28,11 +28,14 @@
  * copyright, permission, and disclaimer notice must appear in all copies of
  * this code.
  */
-
+#include "stdio.h"
 #include "board.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "stdlib.h"
+#include "time.h"
+#define  static volatile bool   Send_Led;
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
@@ -46,14 +49,14 @@
  ****************************************************************************/
 
 /* Sets up system hardware */
-static void delay(int x)
-{
-	int i,j;
-	for(i=0;i<1000;i++)
-	{
-		for(j=0;j<x;j++){}
-	}
-}
+//static void delay(int x)
+//{
+	//int i,j;
+	//for(i=0;i<1000;i++)
+	//{
+	//	for(j=0;j<x;j++){}
+	//}
+//}
 
 static void prvSetupHardware(void)
 {
@@ -62,43 +65,58 @@ static void prvSetupHardware(void)
 }
 static void vSenderTask( void *pvParameters )
 {
-	uint8_t  lValueToSend;
+	//uint8_t*  lValueToSend = ((rand()%3)+1);
+	xQueueHandle  xQueue;
     uint32_t xStatus;
-    lValueToSend = (uint8_t ) pvParameters;
-while(1){
-
-	xStatus = xQueueSendToBack( xQueue, &lValueToSend, 1000 );
+   // lValueToSend = (uint8_t* ) pvParameters;
+    while(1){
+    if(Send_Led == 1)
+    {
+    	srand(time(0));
+    	uint8_t* lValueToSend =((rand()%3)+1);
+    	uint8_t r =((portFLOAT)rand()/(portFLOAT)RAND_MAX);
+    	vTaskDelay((portTickType)(r*configTICK_RATE_HZ));
+    xStatus = xQueueSendToBack(xQueue,&lValueToSend,1000);
 	if( xStatus != pdPASS )
 	{
 
-		vPrintString( "Could not send to the queue.\r\n" );
+	// "Could not send to the queue.\r\n" /
 		}
 		}
-}
+}}
 static void vReceiverTask( void *pvParameters )
 {
 	uint8_t led;
-	BaseType_t xStatus;
-	const TickType_t xTicksToWait = pdMS_TO_TICKS( 100 );
+	xQueueHandle  xQueue;
+	portBASE_TYPE xStatus;
+	const portTickType  xTicksToWait = 2000;
 	while(1)
 	{
-		if( uxQueueMessagesWaiting( xQueue ) != 0 )
+		if( uxQueueMessagesWaiting(xQueue ) != 0 )
 		{
-		vPrintString( "Queue should have been empty!\r\n" );
+		//vPrintString( "Queue should have been empty!\r\n" );
 		}
-		xStatus = xQueueReceive( xQueue, &x, xTicksToWait );
+		xStatus = xQueueReceive( xQueue, &led, xTicksToWait );
 		if( xStatus == pdPASS )
 		{
-		/* Data was successfully received from the queue, print out the received
-		value. */
-			Board_LED_Set(led, false);
+
+			//Board_LED_Set(led, false);
 		}
 		else
 		{
 
-		vPrintString( "Could not receive from the queue.\r\n" );
+		//vPrintString( "Could not receive from the queue.\r\n" );
 		}
 
+	}
+}
+static void vTimerTask(void *pvParameters)
+{
+	while(1){
+	Send_Led=1;
+	vTaskDelay(4000);
+	Send_Led=0;
+	vTaskDelay(30000);
 	}
 }
 /*****************************************************************************
@@ -113,15 +131,21 @@ int main(void)
 {
 
 	prvSetupHardware();
-	xQueueCreate( 15, sizeof(uint8_t) );
+	xQueueHandle  xQueue;
+	xQueue = xQueueCreate( 1500, sizeof(uint8_t) );
 	/* LED1 toggle thread */
 	if( xQueue != NULL )
 	{
-	int *r;
-		r = ((rand % 3) + 1);
-		xTaskCreate( vSenderTask, "Sender1", 128, ( int * ) r, 1, NULL );
-		xTaskCreate( vReceiverTask, "Receiver", 128, NULL, 2, NULL );
-		/* Start the scheduler */
+		xTaskCreate(vTimerTask, (signed char *) "vtimer1",
+						configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY +2UL),
+						(xTaskHandle *) NULL);
+			xTaskCreate(vSenderTask, (signed char *) "sender",
+							configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+							(xTaskHandle *) NULL);
+
+			xTaskCreate(vReceiverTask, (signed char *) "reciever",
+							configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+							(xTaskHandle *) NULL);
 	vTaskStartScheduler();
 
 	/* Should never arrive here */

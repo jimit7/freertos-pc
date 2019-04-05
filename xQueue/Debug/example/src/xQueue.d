@@ -1,7 +1,4 @@
-freertos/src/heap_3.o freertos/src/heap_3.d: ../freertos/src/heap_3.c \
- /home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h \
- /home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h \
- /home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h \
+example/src/xQueue.o example/src/xQueue.d: ../example/src/xQueue.c \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/chip.h \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/lpc_types.h \
@@ -44,17 +41,15 @@ freertos/src/heap_3.o freertos/src/heap_3.d: ../freertos/src/heap_3.c \
  /home/jpatel/freertos-pc/lpc_chip_175x_6x/inc/lpc_types.h \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/lpc_phy.h \
  /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h \
+ /home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h \
  /home/jpatel/freertos-pc/xQueue/freertos/inc/portable.h \
  /home/jpatel/freertos-pc/xQueue/freertos/inc/portmacro.h \
  /home/jpatel/freertos-pc/xQueue/freertos/inc/mpu_wrappers.h \
  /home/jpatel/freertos-pc/xQueue/freertos/inc/task.h \
- /home/jpatel/freertos-pc/xQueue/freertos/inc/list.h
-
-/home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h:
-
-/home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h:
-
-/home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h:
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/list.h \
+ /home/jpatel/freertos-pc/xQueue/freertos/inc/queue.h
 
 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
@@ -140,6 +135,12 @@ freertos/src/heap_3.o freertos/src/heap_3.d: ../freertos/src/heap_3.c \
 
 /home/jpatel/freertos-pc/lpc_board_nxp_lpcxpresso_1769/inc/board.h:
 
+/home/jpatel/freertos-pc/xQueue/freertos/inc/FreeRTOS.h:
+
+/home/jpatel/freertos-pc/xQueue/freertos/inc/projdefs.h:
+
+/home/jpatel/freertos-pc/xQueue/example/inc/FreeRTOSConfig.h:
+
 /home/jpatel/freertos-pc/xQueue/freertos/inc/portable.h:
 
 /home/jpatel/freertos-pc/xQueue/freertos/inc/portmacro.h:
@@ -149,3 +150,5 @@ freertos/src/heap_3.o freertos/src/heap_3.d: ../freertos/src/heap_3.c \
 /home/jpatel/freertos-pc/xQueue/freertos/inc/task.h:
 
 /home/jpatel/freertos-pc/xQueue/freertos/inc/list.h:
+
+/home/jpatel/freertos-pc/xQueue/freertos/inc/queue.h:
