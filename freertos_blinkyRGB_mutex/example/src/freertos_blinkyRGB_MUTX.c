@@ -58,9 +58,9 @@ static void prvLED(uint8_t *pvLED)
 		xSemaphoreTake(xMutex,1000);
 		{
 		Board_LED_Set((uint8_t)pvLED, false);
-		delay(2000);
-       // Board_LED_Set((uint8_t)pvLED, true);
-        vTaskDelay(2000);
+		vTaskDelay(2000);
+     		Board_LED_Set((uint8_t)pvLED, true);
+        	vTaskDelay(2000);
         }
 		}
 
@@ -72,7 +72,7 @@ static void vLEDTask(void *pvParameters)
 		{
 		prvLED(RLED);
 		xSemaphoreGive( xMutex );
-		vTaskDelay(2);
+		vTaskDelay(2000);
 		}
 		}
 

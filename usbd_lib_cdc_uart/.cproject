@@ -76,6 +76,7 @@
 								<option id="com.crt.advproject.link.memory.data.709302979" superClass="com.crt.advproject.link.memory.data" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.memory.sections.2102551518" superClass="com.crt.advproject.link.memory.sections" valueType="stringList"/>
 								<option id="com.crt.advproject.link.gcc.multicore.master.userobjs.1870988280" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" valueType="userObjs"/>
+								<option id="com.crt.advproject.link.gcc.multicore.slave.981459380" superClass="com.crt.advproject.link.gcc.multicore.slave"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.553799562" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
