@@ -76,7 +76,7 @@ static void vSenderTask( void *pvParameters )
     	while(1){
     	srand(time(0));
 
-	uint8_t lValueToSend =((rand()%3)+1);
+	uint8_t lValueToSend =((rand()%2 +0));
 	uint8_t r =((portFLOAT)rand()/(portFLOAT)RAND_MAX);
 	vTaskDelay((portTickType)(r*configTICK_RATE_HZ));
     xStatus = xQueueSend(xQueue,(uint8_t)lValueToSend,( portTickType ) 0);
