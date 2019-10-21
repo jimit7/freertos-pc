@@ -1,4 +1,4 @@
-/*
+/*Jimit Patel
  * @brief FreeRTOS Blinky example
  *
  * @note
